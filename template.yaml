@@ -13,19 +13,18 @@ Globals:
 Parameters:
   WebhookURL:
     Type: String
-    Default: ''
+    Default: 'NOT VALID'
     Description: WebhookURL
     MinLength: 3
     MaxLength: 250
-    AllowedPattern: .*
-    ConstraintDescription: 'Required. Can be characters and underscore only. No numbers or special characters allowed.'
+    ConstraintDescription: 'Required.'
 
 Resources:
   NotifyDiscordFunction:
     Type: AWS::Serverless::Function
     Properties:
       PackageType: Image
-      ImageUri: 084882962555.dkr.ecr.us-west-2.amazonaws.com/notify-discord-webhook
+      ImageUri: "084882962555.dkr.ecr.us-west-2.amazonaws.com/notify-discord-webhook"
       ImageConfig:
         Command: [ "lambda.handler" ]
     Metadata:

@@ -8,3 +8,4 @@ s3_prefix = "notify-discord-webhook"
 region = "us-west-2"
 confirm_changeset = true
 capabilities = "CAPABILITY_IAM"
+image_repositories = ["NotifyDiscordFunction=084882962555.dkr.ecr.us-west-2.amazonaws.com/notify-discord-webhook"]
