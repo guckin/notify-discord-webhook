@@ -1,32 +1,42 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: >
-  lambda-template
+  notify-discord-webhook
 
-  Sample SAM Template for lambda-template
+  Sample SAM Template for notify-discord-webhook
   
 # More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
 Globals:
   Function:
     Timeout: 3
 
+Parameters:
+  WebhookURL:
+    Type: String
+    Default: ''
+    Description: WebhookURL
+    MinLength: 3
+    MaxLength: 250
+    AllowedPattern: https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)
+    ConstraintDescription: 'Required. Can be characters and underscore only. No numbers or special characters allowed.'
+
 Resources:
-  HelloWorldFunction:
+  NotifyDiscordFunction:
     Type: AWS::Serverless::Function
     Properties:
       PackageType: Image
       ImageUri: ECR URL
       ImageConfig:
-        Command: [ "lambdas.handler" ]
+        Command: [ "lambda.handler" ]
     Metadata:
       DockerTag: nodejs14.x-v1
       DockerContext: .
       Dockerfile: Dockerfile
 
 Outputs:
-  HelloWorldFunction:
-    Description: "Hello World Lambda Function ARN"
-    Value: !GetAtt HelloWorldFunction.Arn
+  NotifyDiscordFunction:
+    Description: "Lambda Function ARN"
+    Value: !GetAtt NotifyDiscordFunction.Arn
   HelloWorldFunctionIamRole:
-    Description: "Implicit IAM Role created for Hello World function"
-    Value: !GetAtt HelloWorldFunctionRole.Arn
+    Description: "Implicit IAM Role"
+    Value: !GetAtt NotifyDiscordFunction.Arn
