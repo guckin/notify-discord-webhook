@@ -1,5 +1,8 @@
-export type Greeting = `Hello ${string}`;
+import {postMessageHandlerFactory} from './discord/post-message';
+import got from 'got';
 
-export async function handler(): Promise<Greeting> {
-    return 'Hello World!';
-}
+const url = process.env.WEB_HOOK_URL ?? '';
+export const handler = postMessageHandlerFactory({
+    got,
+    url
+});

@@ -31,6 +31,8 @@
     "collectCoverageFrom": [
       "./src/**/*.ts"
     ],
-    "coveragePathIgnorePatterns": []
+    "coveragePathIgnorePatterns": [
+      "./src/lambda.ts"
+    ]
   }
 }

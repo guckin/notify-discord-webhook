@@ -27,6 +27,9 @@ Resources:
       ImageUri: "084882962555.dkr.ecr.us-west-2.amazonaws.com/notify-discord-webhook"
       ImageConfig:
         Command: [ "lambda.handler" ]
+    Environment:
+      Variables:
+        WEB_HOOK_URL: !Ref WebhookURL
     Metadata:
       DockerTag: nodejs14.x-v1
       DockerContext: .
