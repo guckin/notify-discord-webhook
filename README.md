@@ -1,6 +1,6 @@
-# Template Lambda
+# Notify Discord Webhook Lambda Template
 
-Typescript/Node template for AWS Lambda that deploys with AWS SAM using Github Actions
+Template Lambda for posting messages to Discord Via a configured webhook url
 
 ### Prerequisites
 
@@ -26,7 +26,9 @@ Here are the following Github Secrets you should define for this repository:
 
 `AWS_REGION` Deployment region
 
-`ECR_REPO_URL` URI of the ECR repository. The repository must be in the same region as Deployment region 
+`ECR_REPO_URL` URI of the ECR repository. The repository must be in the same region as Deployment region
+
+`WEB_HOOK_URL` The Discord webhook to `POST` to
 
 
 ### Development
