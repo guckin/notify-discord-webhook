@@ -17,7 +17,7 @@ Parameters:
     Description: WebhookURL
     MinLength: 3
     MaxLength: 250
-    AllowedPattern: https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)
+    AllowedPattern: .*
     ConstraintDescription: 'Required. Can be characters and underscore only. No numbers or special characters allowed.'
 
 Resources:
