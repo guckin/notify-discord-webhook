@@ -25,7 +25,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       PackageType: Image
-      ImageUri: ECR URL
+      ImageUri: 084882962555.dkr.ecr.us-west-2.amazonaws.com/notify-discord-webhook
       ImageConfig:
         Command: [ "lambda.handler" ]
     Metadata:
